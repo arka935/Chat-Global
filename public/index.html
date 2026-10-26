@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087f69">
+  <title>GlobalChat</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <header class="brand"><div class="logo">G</div><div><b>GlobalChat</b><small>Chat teks real-time</small></div></header>
+      <section class="profile"><div class="avatar">●</div><div><b id="my-name">Belum masuk</b><small>Pengguna kamu</small></div></section>
+      <h2>Pengguna online <span id="user-count">0</span></h2>
+      <ul id="users" class="users"><li class="muted">Masuk untuk melihat pengguna.</li></ul>
+      <footer>Versi 1 · Tanpa Firebase</footer>
+    </aside>
+    <section class="chat">
+      <header class="chat-header"><div class="online-dot"></div><div><b>Ruang chat global</b><small id="status">Terhubung ke server lokal</small></div></header>
+      <div id="login-overlay" class="overlay">
+        <form id="login-form" class="login-card">
+          <div class="logo big">G</div><h1>Gabung ke chat</h1>
+          <p>Pilih nama tampilan untuk mulai mengobrol.</p>
+          <input id="name-input" maxlength="24" placeholder="Nama tampilan" autocomplete="nickname" required>
+          <button>Masuk chat</button>
+        </form>
+      </div>
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="empty"><div class="empty-icon">✦</div><h2>Mulai percakapan</h2><p>Pesan yang dikirim akan terlihat oleh semua pengguna yang sedang terhubung.</p></div>
+      </div>
+      <form id="message-form" class="composer">
+        <input id="message-input" maxlength="1000" placeholder="Tulis pesan..." autocomplete="off" disabled>
+        <button id="send-button" aria-label="Kirim pesan" disabled>➤</button>
+      </form>
+    </section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
